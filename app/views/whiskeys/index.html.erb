@@ -21,6 +21,7 @@
   <tbody>
     <% @whiskeys.each do |whiskey| %>
       <tr>
+        <td><%= image_tag whiskey.image.url(:medium) %></td>
         <td><%= whiskey.title %></td>
         <td><%= whiskey.abv %></td>
         <td><%= whiskey.price %></td>

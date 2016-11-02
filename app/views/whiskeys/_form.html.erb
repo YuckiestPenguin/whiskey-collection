@@ -1,4 +1,4 @@
-<%= form_for(whiskey) do |f| %>
+<%= form_for @whiskey, html: { multipart: true } do |f| %>
   <% if whiskey.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(whiskey.errors.count, "error") %> prohibited this whiskey from being saved:</h2>
@@ -54,6 +54,11 @@
   <div class="field">
     <%= f.label :score %>
     <%= f.number_field :score %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </div>
 
   <div class="actions">
