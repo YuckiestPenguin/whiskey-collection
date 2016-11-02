@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  abv: 9.99
+  price: 9.99
+  color: MyText
+  nose: MyText
+  taste: MyText
+  finish: MyText
+  overall: MyText
+  score: 1
+
+two:
+  title: MyString
+  abv: 9.99
+  price: 9.99
+  color: MyText
+  nose: MyText
+  taste: MyText
+  finish: MyText
+  overall: MyText
+  score: 1

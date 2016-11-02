@@ -1,0 +1,62 @@
+<%= form_for(whiskey) do |f| %>
+  <% if whiskey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(whiskey.errors.count, "error") %> prohibited this whiskey from being saved:</h2>
+
+      <ul>
+      <% whiskey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :abv %>
+    <%= f.text_field :abv %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :color %>
+    <%= f.text_area :color %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nose %>
+    <%= f.text_area :nose %>
+  </div>
+
+  <div class="field">
+    <%= f.label :taste %>
+    <%= f.text_area :taste %>
+  </div>
+
+  <div class="field">
+    <%= f.label :finish %>
+    <%= f.text_area :finish %>
+  </div>
+
+  <div class="field">
+    <%= f.label :overall %>
+    <%= f.text_area :overall %>
+  </div>
+
+  <div class="field">
+    <%= f.label :score %>
+    <%= f.number_field :score %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
