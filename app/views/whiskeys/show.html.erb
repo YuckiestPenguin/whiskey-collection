@@ -1,48 +1,34 @@
-<%= image_tag @whiskey.image.url(:medium) %>
-<p>
-  <strong>Title:</strong>
-  <%= @whiskey.title %>
-</p>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 text-center">
+          <%= image_tag @whiskey.image.url(:medium), class: "center-block" %>
+          <h2 class="text-center"><%= @whiskey.title %></h2>
+          <h4><strong>ABV: </strong><%= @whiskey.abv %></h4>
+          <h4><strong>Price: </strong><%= @whiskey.price %></h4>
+      </div>
+      <div class="col-md-6 text-center">
+          <h1 id="score" class="text-center"><%= @whiskey.score %></h1>
+          <h2>Color:</h2>
+          <h4><%= @whiskey.color %></h4>
 
-<p>
-  <strong>Abv:</strong>
-  <%= @whiskey.abv %>
-</p>
+          <h2>Nose:</h2>
+          <h4><%= @whiskey.nose %></h4>
 
-<p>
-  <strong>Price:</strong>
-  <%= @whiskey.price %>
-</p>
+          <h2>Taste:</h2>
+          <h4><%= @whiskey.taste %></h4>
 
-<p>
-  <strong>Color:</strong>
-  <%= @whiskey.color %>
-</p>
+          <h2>Finish:</h2>
+          <h4><%= @whiskey.finish %></h4>
 
-<p>
-  <strong>Nose:</strong>
-  <%= @whiskey.nose %>
-</p>
+          <h2>Overall:</h2>
+          <h4><%= @whiskey.overall %></h4>
 
-<p>
-  <strong>Taste:</strong>
-  <%= @whiskey.taste %>
-</p>
+      </div>
+    </div>
 
-<p>
-  <strong>Finish:</strong>
-  <%= @whiskey.finish %>
-</p>
+</div>
 
-<p>
-  <strong>Overall:</strong>
-  <%= @whiskey.overall %>
-</p>
 
-<p>
-  <strong>Score:</strong>
-  <%= @whiskey.score %>
-</p>
-
-<%= link_to 'Edit', edit_whiskey_path(@whiskey) %> |
+<%= link_to 'Edit', edit_whiskey_path(@whiskey) %>
+|
 <%= link_to 'Back', whiskeys_path %>
