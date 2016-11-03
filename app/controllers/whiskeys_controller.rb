@@ -5,6 +5,8 @@ class WhiskeysController < ApplicationController
   def search
     if params[:search].present?
       @whiskeys = Whiskey.search(params[:search])
+
+
     else
       @whiskeys = Whiskey.all
     end
