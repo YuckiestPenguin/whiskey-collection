@@ -1,0 +1,460 @@
+[33mcommit fa1ae2825ca51c545e3f7cc9f22f43642fd95545[m
+Author: vinicomelo <vinicomelo@gmail.com>
+Date:   Wed Nov 2 16:48:53 2016 -0400
+
+    added a few whiskeys and review taken from reddit/r/bourbon.
+
+[1mdiff --git a/Gemfile b/Gemfile[m
+[1mindex b195532..c2a08e7 100644[m
+[1m--- a/Gemfile[m
+[1m+++ b/Gemfile[m
+[36m@@ -48,3 +48,4 @@[m [mend[m
+ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby][m
+ gem "devise"[m
+ gem 'paperclip'[m
+[32m+[m[32mgem "bootstrap-sass"[m
+[1mdiff --git a/Gemfile.lock b/Gemfile.lock[m
+[1mindex 60848b1..3798c42 100644[m
+[1m--- a/Gemfile.lock[m
+[1m+++ b/Gemfile.lock[m
+[36m@@ -39,7 +39,12 @@[m [mGEM[m
+       minitest (~> 5.1)[m
+       tzinfo (~> 1.1)[m
+     arel (7.1.4)[m
+[32m+[m[32m    autoprefixer-rails (6.5.1.1)[m
+[32m+[m[32m      execjs[m
+     bcrypt (3.1.11)[m
+[32m+[m[32m    bootstrap-sass (3.3.7)[m
+[32m+[m[32m      autoprefixer-rails (>= 5.2.1)[m
+[32m+[m[32m      sass (>= 3.3.4)[m
+     builder (3.2.2)[m
+     byebug (9.0.6)[m
+     climate_control (0.0.3)[m
+[36m@@ -177,6 +182,7 @@[m [mPLATFORMS[m
+   ruby[m
+ [m
+ DEPENDENCIES[m
+[32m+[m[32m  bootstrap-sass[m
+   byebug[m
+   coffee-rails (~> 4.2)[m
+   devise[m
+[1mdiff --git a/app/assets/javascripts/application.js b/app/assets/javascripts/application.js[m
+[1mindex b12018d..4abe196 100644[m
+[1m--- a/app/assets/javascripts/application.js[m
+[1m+++ b/app/assets/javascripts/application.js[m
+[36m@@ -12,5 +12,6 @@[m
+ //[m
+ //= require jquery[m
+ //= require jquery_ujs[m
+[32m+[m[32m//= require bootstrap-sprockets[m
+ //= require turbolinks[m
+ //= require_tree .[m
+[1mdiff --git a/app/assets/stylesheets/application.css b/app/assets/stylesheets/application.css[m
+[1mdeleted file mode 100644[m
+[1mindex 0ebd7fe..0000000[m
+[1m--- a/app/assets/stylesheets/application.css[m
+[1m+++ /dev/null[m
+[36m@@ -1,15 +0,0 @@[m
+[31m-/*[m
+[31m- * This is a manifest file that'll be compiled into application.css, which will include all the files[m
+[31m- * listed below.[m
+[31m- *[m
+[31m- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,[m
+[31m- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.[m
+[31m- *[m
+[31m- * You're free to add application-wide styles to this file and they'll appear at the bottom of the[m
+[31m- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS[m
+[31m- * files in this directory. Styles in this file should be added after the last require_* statement.[m
+[31m- * It is generally better to create a new file per style scope.[m
+[31m- *[m
+[31m- *= require_tree .[m
+[31m- *= require_self[m
+[31m- */[m
+[1mdiff --git a/app/assets/stylesheets/application.scss b/app/assets/stylesheets/application.scss[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9e6db71[m
+[1m--- /dev/null[m
+[1m+++ b/app/assets/stylesheets/application.scss[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m/*[m
+[32m+[m[32m * This is a manifest file that'll be compiled into application.css, which will include all the files[m
+[32m+[m[32m * listed below.[m
+[32m+[m[32m *[m
+[32m+[m[32m * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,[m
+[32m+[m[32m * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.[m
+[32m+[m[32m *[m
+[32m+[m[32m * You're free to add application-wide styles to this file and they'll appear at the bottom of the[m
+[32m+[m[32m * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS[m
+[32m+[m[32m * files in this directory. Styles in this file should be added after the last require_* statement.[m
+[32m+[m[32m * It is generally better to create a new file per style scope.[m
+[32m+[m[32m *[m
+[32m+[m[32m *= require_tree .[m
+[32m+[m[32m *= require_self[m
+[32m+[m[32m */[m
+[32m+[m[32m @import "bootstrap-sprockets";[m
+[32m+[m[32m @import "bootstrap";[m
+[1mdiff --git a/app/assets/stylesheets/scaffolds.scss b/app/assets/stylesheets/scaffolds.scss[m
+[1mdeleted file mode 100644[m
+[1mindex 4ce4266..0000000[m
+[1m--- a/app/assets/stylesheets/scaffolds.scss[m
+[1m+++ /dev/null[m
+[36m@@ -1,89 +0,0 @@[m
+[31m-body {[m
+[31m-  background-color: #fff;[m
+[31m-  color: #333;[m
+[31m-  font-family: verdana, arial, helvetica, sans-serif;[m
+[31m-  font-size: 13px;[m
+[31m-  line-height: 18px;[m
+[31m-  margin: 33px;[m
+[31m-}[m
+[31m-[m
+[31m-p, ol, ul, td {[m
+[31m-  font-family: verdana, arial, helvetica, sans-serif;[m
+[31m-  font-size: 13px;[m
+[31m-  line-height: 18px;[m
+[31m-  margin: 33px;[m
+[31m-}[m
+[31m-[m
+[31m-pre {[m
+[31m-  background-color: #eee;[m
+[31m-  padding: 10px;[m
+[31m-  font-size: 11px;[m
+[31m-}[m
+[31m-[m
+[31m-a {[m
+[31m-  color: #000;[m
+[31m-[m
+[31m-  &:visited {[m
+[31m-    color: #666;[m
+[31m-  }[m
+[31m-[m
+[31m-  &:hover {[m
+[31m-    color: #fff;[m
+[31m-    background-color: #000;[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-th {[m
+[31m-  padding-bottom: 5px;[m
+[31m-}[m
+[31m-[m
+[31m-td {[m
+[31m-  padding-bottom: 7px;[m
+[31m-  padding-left: 5px;[m
+[31m-  padding-right: 5px;[m
+[31m-}[m
+[31m-[m
+[31m-div {[m
+[31m-  &.field, &.actions {[m
+[31m-    margin-bottom: 10px;[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-#notice {[m
+[31m-  color: green;[m
+[31m-}[m
+[31m-[m
+[31m-.field_with_errors {[m
+[31m-  padding: 2px;[m
+[31m-  background-color: red;[m
+[31m-  display: table;[m
+[31m-}[m
+[31m-[m
+[31m-#error_explanation {[m
+[31m-  width: 450px;[m
+[31m-  border: 2px solid red;[m
+[31m-  padding: 7px;[m
+[31m-  padding-bottom: 0;[m
+[31m-  margin-bottom: 20px;[m
+[31m-  background-color: #f0f0f0;[m
+[31m-[m
+[31m-  h2 {[m
+[31m-    text-align: left;[m
+[31m-    font-weight: bold;[m
+[31m-    padding: 5px 5px 5px 15px;[m
+[31m-    font-size: 12px;[m
+[31m-    margin: -7px;[m
+[31m-    margin-bottom: 0;[m
+[31m-    background-color: #c00;[m
+[31m-    color: #fff;[m
+[31m-  }[m
+[31m-[m
+[31m-  ul li {[m
+[31m-    font-size: 12px;[m
+[31m-    list-style: square;[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-label {[m
+[31m-  display: block;[m
+[31m-}[m
+[1mdiff --git a/app/assets/stylesheets/whiskeys.scss b/app/assets/stylesheets/whiskeys.scss[m
+[1mindex 0969a0d..a3694c6 100644[m
+[1m--- a/app/assets/stylesheets/whiskeys.scss[m
+[1m+++ b/app/assets/stylesheets/whiskeys.scss[m
+[36m@@ -1,3 +1,6 @@[m
+ // Place all the styles related to the Whiskeys controller here.[m
+ // They will automatically be included in application.css.[m
+ // You can use Sass (SCSS) here: http://sass-lang.com/[m
+[32m+[m[32m#score {[m
+[32m+[m[32m  font-size: 2000%[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/views/layouts/_header.html.erb b/app/views/layouts/_header.html.erb[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7d65b18[m
+[1m--- /dev/null[m
+[1m+++ b/app/views/layouts/_header.html.erb[m
+[36m@@ -0,0 +1,31 @@[m
+[32m+[m[32m<div class="navbar navbar-default" role="navigation">[m
+[32m+[m[32m  <div class="container">[m
+[32m+[m[32m    <div class="navbar-header">[m
+[32m+[m[32m      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">[m
+[32m+[m[32m        <span class="sr-only">Toggle Navigation</span>[m
+[32m+[m[32m        <span class="icon-bar"></span>[m
+[32m+[m[32m        <span class="icon-bar"></span>[m
+[32m+[m[32m        <span class="icon-bar"></span>[m
+[32m+[m[32m      </button>[m
+[32m+[m[32m      <%= link_to "My Whiskey Collection", root_path, class: "navbar-brand" %>[m
+[32m+[m[32m    </div>[m
+[32m+[m
+[32m+[m[32m    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">[m
+[32m+[m[32m      <ul class="nav navbar-nav">[m
+[32m+[m[32m        <% if user_signed_in? %>[m
+[32m+[m[32m        <li><%= link_to "New Whiskey", new_whiskey_path, class: "active" %></li>[m
+[32m+[m[32m        <li><%= link_to "Account", edit_user_registration_path %></li>[m
+[32m+[m[32m        <% else %>[m
+[32m+[m[32m        <li><%= link_to "Sign Up", new_user_registration_path, class: "active" %></li>[m
+[32m+[m[32m        <li><%= link_to "Sign In", new_user_session_path, class: "active" %></li>[m
+[32m+[m[32m        <% end %>[m
+[32m+[m[32m      </ul>[m
+[32m+[m[32m      <form class="navbar-form navbar-right" role="search">[m
+[32m+[m[32m        <div class="form-group">[m
+[32m+[m[32m          <input type="text" class="form-control" placeholder="Search">[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m        <button type="submit" class="btn btn-default">Submit</button>[m
+[32m+[m[32m      </form>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  </div>[m
+[32m+[m[32m</div>[m
+[1mdiff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb[m
+[1mindex 20d58c9..b314290 100644[m
+[1m--- a/app/views/layouts/application.html.erb[m
+[1m+++ b/app/views/layouts/application.html.erb[m
+[36m@@ -1,7 +1,7 @@[m
+ <!DOCTYPE html>[m
+ <html>[m
+     <head>[m
+[31m-        <title>WhiskeyReview</title>[m
+[32m+[m[32m        <title>My Whiskeys</title>[m
+         <%= csrf_meta_tags %>[m
+ [m
+         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>[m
+[36m@@ -9,9 +9,12 @@[m
+     </head>[m
+ [m
+     <body>[m
+[31m-        <% flash.each do |name, msg| %>[m
+[31m-        <%= content_tag(:div, msg, class: "alert alert-info") %>[m
+[31m-        <% end %>[m
+[31m-        <%= yield %>[m
+[32m+[m[32m        <%= render 'layouts/header' %>[m
+[32m+[m[32m        <div class="container">[m
+[32m+[m[32m          <% flash.each do |name, msg| %>[m
+[32m+[m[32m          <%= content_tag(:div, msg, class: "alert alert-info") %>[m
+[32m+[m[32m          <% end %>[m
+[32m+[m[32m          <%= yield %>[m
+[32m+[m[32m        </div>[m
+     </body>[m
+ </html>[m
+[1mdiff --git a/app/views/whiskeys/index.html.erb b/app/views/whiskeys/index.html.erb[m
+[1mindex 9f61173..a247497 100644[m
+[1m--- a/app/views/whiskeys/index.html.erb[m
+[1m+++ b/app/views/whiskeys/index.html.erb[m
+[36m@@ -1,44 +1,20 @@[m
+[31m-<p id="notice"><%= notice %></p>[m
+[32m+[m[32m<% if !user_signed_in? %>[m
+[32m+[m[32m  <div class="jumbotron">[m
+[32m+[m[32m    <h1>Want to Keep Track of Your Whiskeys?</h1>[m
+[32m+[m[32m    <h2>What's your poison? </h2>[m
+[32m+[m[32m    <p><%= link_to "Sign Up to Add to the Collection", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>[m
+[32m+[m[32m  </div>[m
+[32m+[m[32m<% end %>[m
+ [m
+[31m-<h1>Whiskeys</h1>[m
+[31m-[m
+[31m-<table>[m
+[31m-  <thead>[m
+[31m-    <tr>[m
+[31m-      <th>Title</th>[m
+[31m-      <th>Abv</th>[m
+[31m-      <th>Price</th>[m
+[31m-      <th>Color</th>[m
+[31m-      <th>Nose</th>[m
+[31m-      <th>Taste</th>[m
+[31m-      <th>Finish</th>[m
+[31m-      <th>Overall</th>[m
+[31m-      <th>Score</th>[m
+[31m-      <th colspan="3"></th>[m
+[31m-    </tr>[m
+[31m-  </thead>[m
+[31m-[m
+[31m-  <tbody>[m
+[32m+[m[32m<div class="container">[m
+[32m+[m[32m  <div class="row">[m
+     <% @whiskeys.each do |whiskey| %>[m
+[31m-      <tr>[m
+[31m-        <td><%= image_tag whiskey.image.url(:medium) %></td>[m
+[31m-        <td><%= whiskey.title %></td>[m
+[31m-        <td><%= whiskey.abv %></td>[m
+[31m-        <td><%= whiskey.price %></td>[m
+[31m-        <td><%= whiskey.color %></td>[m
+[31m-        <td><%= whiskey.nose %></td>[m
+[31m-        <td><%= whiskey.taste %></td>[m
+[31m-        <td><%= whiskey.finish %></td>[m
+[31m-        <td><%= whiskey.overall %></td>[m
+[31m-        <td><%= whiskey.score %></td>[m
+[31m-        <td><%= link_to 'Show', whiskey %></td>[m
+[31m-        <td><%= link_to 'Edit', edit_whiskey_path(whiskey) %></td>[m
+[31m-        <td><%= link_to 'Destroy', whiskey, method: :delete, data: { confirm: 'Are you sure?' } %></td>[m
+[31m-      </tr>[m
+[31m-    <% end %>[m
+[31m-  </tbody>[m
+[31m-</table>[m
+[32m+[m[32m      <div class="col-sm-6 col-md-3">[m
+[32m+[m[32m        <div class="thumbnail">[m
+[32m+[m[32m          <%= link_to (image_tag whiskey.image.url(:medium), class: "image"), whiskey %>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      </div>[m
+ [m
+[31m-<br>[m
+[31m-[m
+[31m-<%= link_to 'New Whiskey', new_whiskey_path %>[m
+[32m+[m[32m    <% end %>[m
+[32m+[m[32m  </div>[m
+[32m+[m[32m</div>[m
+[1mdiff --git a/app/views/whiskeys/show.html.erb b/app/views/whiskeys/show.html.erb[m
+[1mindex c9ff118..d2d40e2 100644[m
+[1m--- a/app/views/whiskeys/show.html.erb[m
+[1m+++ b/app/views/whiskeys/show.html.erb[m
+[36m@@ -1,48 +1,34 @@[m
+[31m-<%= image_tag @whiskey.image.url(:medium) %>[m
+[31m-<p>[m
+[31m-  <strong>Title:</strong>[m
+[31m-  <%= @whiskey.title %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<p>[m
+[31m-  <strong>Abv:</strong>[m
+[31m-  <%= @whiskey.abv %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<p>[m
+[31m-  <strong>Price:</strong>[m
+[31m-  <%= @whiskey.price %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<p>[m
+[31m-  <strong>Color:</strong>[m
+[31m-  <%= @whiskey.color %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<p>[m
+[31m-  <strong>Nose:</strong>[m
+[31m-  <%= @whiskey.nose %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<p>[m
+[31m-  <strong>Taste:</strong>[m
+[31m-  <%= @whiskey.taste %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<p>[m
+[31m-  <strong>Finish:</strong>[m
+[31m-  <%= @whiskey.finish %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<p>[m
+[31m-  <strong>Overall:</strong>[m
+[31m-  <%= @whiskey.overall %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<p>[m
+[31m-  <strong>Score:</strong>[m
+[31m-  <%= @whiskey.score %>[m
+[31m-</p>[m
+[31m-[m
+[31m-<%= link_to 'Edit', edit_whiskey_path(@whiskey) %> |[m
+[32m+[m[32m<div class="container">[m
+[32m+[m[32m  <div class="row">[m
+[32m+[m[32m      <div class="col-md-6 text-center">[m
+[32m+[m[32m          <%= image_tag @whiskey.image.url(:medium), class: "center-block" %>[m
+[32m+[m[32m          <h2 class="text-center"><%= @whiskey.title %></h2>[m
+[32m+[m[32m          <h4><strong>ABV: </strong><%= @whiskey.abv %></h4>[m
+[32m+[m[32m          <h4><strong>Price: </strong><%= @whiskey.price %></h4>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m      <div class="col-md-6 text-center">[m
+[32m+[m[32m          <h1 id="score" class="text-center"><%= @whiskey.score %></h1>[m
+[32m+[m[32m          <h2>Color:</h2>[m
+[32m+[m[32m          <h4><%= @whiskey.color %></h4>[m
+[32m+[m
+[32m+[m[32m          <h2>Nose:</h2>[m
+[32m+[m[32m          <h4><%= @whiskey.nose %></h4>[m
+[32m+[m
+[32m+[m[32m          <h2>Taste:</h2>[m
+[32m+[m[32m          <h4><%= @whiskey.taste %></h4>[m
+[32m+[m
+[32m+[m[32m          <h2>Finish:</h2>[m
+[32m+[m[32m          <h4><%= @whiskey.finish %></h4>[m
+[32m+[m
+[32m+[m[32m          <h2>Overall:</h2>[m
+[32m+[m[32m          <h4><%= @whiskey.overall %></h4>[m
+[32m+[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m
+[32m+[m[32m</div>[m
+[32m+[m
+[32m+[m
+[32m+[m[32m<%= link_to 'Edit', edit_whiskey_path(@whiskey) %>[m
+[32m+[m[32m|[m
+ <%= link_to 'Back', whiskeys_path %>[m
+[1mdiff --git a/public/system/whiskeys/images/000/000/005/medium/bookers.JPG b/public/system/whiskeys/images/000/000/005/medium/bookers.JPG[m
+[1mnew file mode 100644[m
+[1mindex 0000000..60a0dd9[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/005/medium/bookers.JPG differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/005/original/bookers.JPG b/public/system/whiskeys/images/000/000/005/original/bookers.JPG[m
+[1mnew file mode 100644[m
+[1mindex 0000000..390053c[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/005/original/bookers.JPG differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/006/medium/old-grand-dad-bib.jpg b/public/system/whiskeys/images/000/000/006/medium/old-grand-dad-bib.jpg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b48adda[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/006/medium/old-grand-dad-bib.jpg differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/006/original/old-grand-dad-bib.jpg b/public/system/whiskeys/images/000/000/006/original/old-grand-dad-bib.jpg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3ca5523[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/006/original/old-grand-dad-bib.jpg differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/007/medium/high-west-double-rye.jpg b/public/system/whiskeys/images/000/000/007/medium/high-west-double-rye.jpg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cf93f0a[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/007/medium/high-west-double-rye.jpg differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/007/original/high-west-double-rye.jpg b/public/system/whiskeys/images/000/000/007/original/high-west-double-rye.jpg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..380658d[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/007/original/high-west-double-rye.jpg differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/008/medium/old-forester-1920.jpeg b/public/system/whiskeys/images/000/000/008/medium/old-forester-1920.jpeg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..512355e[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/008/medium/old-forester-1920.jpeg differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/008/original/old-forester-1920.jpeg b/public/system/whiskeys/images/000/000/008/original/old-forester-1920.jpeg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..85ffabe[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/008/original/old-forester-1920.jpeg differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/009/medium/elijah-craig-12.jpg b/public/system/whiskeys/images/000/000/009/medium/elijah-craig-12.jpg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..936357b[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/009/medium/elijah-craig-12.jpg differ
+[1mdiff --git a/public/system/whiskeys/images/000/000/009/original/elijah-craig-12.jpg b/public/system/whiskeys/images/000/000/009/original/elijah-craig-12.jpg[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a9568a6[m
+Binary files /dev/null and b/public/system/whiskeys/images/000/000/009/original/elijah-craig-12.jpg differ

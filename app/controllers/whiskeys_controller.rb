@@ -1,9 +1,17 @@
 class WhiskeysController < ApplicationController
   before_action :set_whiskey, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
+
+  def search
+    if params[:search].present?
+      @whiskeys = Whiskey.search(params[:search])
+    else
+      @whiskeys = Whiskey.all
+    end
+  end
 
   def index
-    @whiskeys = Whiskey.all
+    @whiskeys = Whiskey.all.sort_by &:title
   end
 
   def show
