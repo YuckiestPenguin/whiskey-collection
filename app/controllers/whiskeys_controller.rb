@@ -31,7 +31,7 @@ class WhiskeysController < ApplicationController
 
     respond_to do |format|
       if @whiskey.save
-        format.html { redirect_to @whiskey, notice: 'Whiskey was successfully created.' }
+        format.html { redirect_to @whiskey, notice: 'Yes! Another one in the collection.' }
         format.json { render :show, status: :created, location: @whiskey }
       else
         format.html { render :new }
@@ -55,7 +55,7 @@ class WhiskeysController < ApplicationController
   def destroy
     @whiskey.destroy
     respond_to do |format|
-      format.html { redirect_to whiskeys_url, notice: 'Whiskey was successfully destroyed.' }
+      format.html { redirect_to whiskeys_url, notice: 'Whiskey was successfully deleted from your collection' }
       format.json { head :no_content }
     end
   end

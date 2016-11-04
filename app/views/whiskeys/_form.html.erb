@@ -1,67 +1,93 @@
 <%= form_for @whiskey, html: { multipart: true } do |f| %>
-  <% if whiskey.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(whiskey.errors.count, "error") %> prohibited this whiskey from being saved:</h2>
+<% if whiskey.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(whiskey.errors.count, "error") %>
+        prohibited this whiskey from being saved:</h2>
 
-      <ul>
-      <% whiskey.errors.full_messages.each do |message| %>
+    <ul>
+        <% whiskey.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
-      </ul>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="container-fluid" id="new-whiskey">
+    <div class="row">
+        <hr>
+        <div class="col-xs-6">
+            <form>
+                <div class="field form-group">
+                    <%= f.label :title, "Name of the Whiskey" %>
+                    <%= f.text_field :title, class: "form-control", placeholder: "Ex: Pikesville Straight Rye Whiskey" %>
+                </div>
+                <div class="field form-group">
+                    <%= f.label :abv, "ABV %" %>
+                    <%= f.number_field :abv, class: "form-control", placeholder: "Ex: 55.2" %>
+                </div>
+                <div class="field form-group">
+                    <%= f.label :price, "How much was it?" %>
+                    <%= f.number_field :price, class: "form-control", placeholder: "$" %>
+                </div>
+                <div class="field form-group">
+                    <%= f.label :color, "What did it look like?" %>
+                    <%= f.text_area :color, class: "form-control", placeholder: "Ex: Beautiful amber. Looks like whiskey" %>
+                </div>
+                <div class="field form-group">
+                    <%= f.label :nose, "You have to tell me how it smelled!" %>
+                    <%= f.text_area :nose, class: "form-control", placeholder: "Ex: Caramel, brown sugar, stewed blueberries, leather, oak." %>
+                </div>
+                <div class="field form-group">
+                    <%= f.label :taste, "Taste Buds! Report for Duty!" %>
+                    <%= f.text_area :taste, class: "form-control", placeholder: "Ex: It's initially fairly bitter with a little astringent note. This fades quickly to nougat and sweetness, vanilla and caramel. It's thick, rich and pretty satisfying. " %>
+                </div>
+                <div class="field form-group">
+                    <%= f.label :finish, "Ah, Oui! La Grande Fin! The Finish!" %>
+                    <%= f.text_area :finish, class: "form-control", placeholder: "Ex: Moderate with wood and sweet vanilla, very bourbon-like. Very delicious-like" %>
+                </div>
+                <div class="field form-group">
+                    <%= f.label :score %>
+                    <%= f.number_field :score, class: "form-control", placeholder: "Between 1 and 10" %>
+                </div>
+                <div class="field form-group">
+                    <label class="btn btn-info btn-lg">
+                        Got a photo of that bottle?
+                        <span style="display:none;" class="btn btn-info">
+                            <%= f.file_field :image%>
+                        </span>
+                    </label>
+                </div>
+                <div class="actions form-group">
+                    <%= f.submit 'Add New Whiskey', class: " btn-block  btn-lg btn-success btn" %>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6 text-center">
+          <h1>How We Rate Our Whiskeys</h1>
+          <h2>1 | Disgusting</h2>
+          <h4>So bad I poured it out</h4>
+          <h2>2 | Poor</h2>
+          <h4>I wouldn't consume by choice</h4>
+          <h2>3 | Bad</h2>
+          <h4>Multiple flaws</h4>
+          <h2>4 | Sub-Par</h2>
+          <h4>Not bad, but many things I'd rather have</h4>
+          <h2>5 | Good</h2>
+          <h4>This is a good, solid daily</h4>
+          <h2>6 | Very Good</h2>
+          <h4>A cut above.</h4>
+          <h2>7 | Great</h2>
+          <h4>Well above average</h4>
+          <h2>8 | Excellent</h2>
+          <h4>Really quite exceptional</h4>
+          <h2>9 | Incredible</h2>
+          <h4>An all time favorite</h4>
+          <h2>10 | Unsurpassable</h2>
+          <h4>No better exists</h4>
+        </div>
     </div>
-  <% end %>
+</div>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= f.label :abv %>
-    <%= f.text_field :abv %>
-  </div>
 
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :color %>
-    <%= f.text_area :color %>
-  </div>
-
-  <div class="field">
-    <%= f.label :nose %>
-    <%= f.text_area :nose %>
-  </div>
-
-  <div class="field">
-    <%= f.label :taste %>
-    <%= f.text_area :taste %>
-  </div>
-
-  <div class="field">
-    <%= f.label :finish %>
-    <%= f.text_area :finish %>
-  </div>
-
-  <div class="field">
-    <%= f.label :overall %>
-    <%= f.text_area :overall %>
-  </div>
-
-  <div class="field">
-    <%= f.label :score %>
-    <%= f.number_field :score %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
