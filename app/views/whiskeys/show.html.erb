@@ -5,11 +5,16 @@
           <h2 class="text-center"><%= @whiskey.title %></h2>
           <h4><strong>ABV: </strong><%= @whiskey.abv %></h4>
           <h4><strong>Price: </strong><%= @whiskey.price %></h4>
-          <h4><strong>Own It: </strong><%= @whiskey.own %></h4>
+          <% if @whiskey.own == true %>
+          <%= image_tag "front-bottle.png" %>
+            <h4>Currently On Hand</h4>
+            <% else %>
+            <h4>Currently Not On Hand</h4>
+          <% end %>
       </div>
       <div class="col-md-6 text-center">
           <h1 id="score" class="text-center"><%= @whiskey.score %></h1>
-          <h2>Color:</h2>
+          <h2>Color:</h2><%= image_tag "colorwheel.png" %>
           <h4><%= @whiskey.color %></h4>
 
           <h2>Nose:</h2>

@@ -22,12 +22,19 @@
                     <%= f.text_field :title, class: "form-control", placeholder: "Ex: Pikesville Straight Rye Whiskey" %>
                 </div>
                 <div class="field form-group">
-                    <%= f.label :abv, "ABV %" %>
-                    <%= f.number_field :abv, class: "form-control", placeholder: "Ex: 55.2" %>
+                    <%= f.label :abv, "ABV" %>
+                    <div class="input-group">
+                      <div class="input-group-addon">%</div>
+                      <%= f.number_field :abv, class: "form-control", placeholder: "Ex: 55.2" %>
+                    </div>
+
                 </div>
                 <div class="field form-group">
                     <%= f.label :price, "How much was it?" %>
-                    <%= f.number_field :price, class: "form-control", placeholder: "$" %>
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                      <%= f.number_field :price, class: "form-control", placeholder: "$" %>
+                    </div>
                 </div>
                 <div class="field form-group">
                     <%= f.label :color, "What did it look like?" %>
@@ -57,41 +64,39 @@
                         </span>
                     </label>
                 </div>
-              <div class="field form-group">
-                <%= f.label "On Hand?" %>
-                <%= f.check_box :own %>
-              </div>
+                <div class="field form-group">
+                    <%= f.label "On Hand?" %>
+                    <%= f.check_box :own, class: "checkbox" %>
+                </div>
                 <div class="actions form-group">
                     <%= f.submit 'Add New Whiskey', class: " btn-block  btn-lg btn-success btn" %>
                 </div>
             </form>
         </div>
         <div class="col-xs-6 text-center">
-          <h1>How We Rate Our Whiskeys</h1>
-          <h2>1 | Disgusting</h2>
-          <h4>So bad I poured it out</h4>
-          <h2>2 | Poor</h2>
-          <h4>I wouldn't consume by choice</h4>
-          <h2>3 | Bad</h2>
-          <h4>Multiple flaws</h4>
-          <h2>4 | Sub-Par</h2>
-          <h4>Not bad, but many things I'd rather have</h4>
-          <h2>5 | Good</h2>
-          <h4>This is a good, solid daily</h4>
-          <h2>6 | Very Good</h2>
-          <h4>A cut above.</h4>
-          <h2>7 | Great</h2>
-          <h4>Well above average</h4>
-          <h2>8 | Excellent</h2>
-          <h4>Really quite exceptional</h4>
-          <h2>9 | Incredible</h2>
-          <h4>An all time favorite</h4>
-          <h2>10 | Unsurpassable</h2>
-          <h4>No better exists</h4>
+            <h1>How We Rate Our Whiskeys</h1>
+            <h2>1 | Disgusting</h2>
+            <h4>So bad I poured it out</h4>
+            <h2>2 | Poor</h2>
+            <h4>I wouldn't consume by choice</h4>
+            <h2>3 | Bad</h2>
+            <h4>Multiple flaws</h4>
+            <h2>4 | Sub-Par</h2>
+            <h4>Not bad, but many things I'd rather have</h4>
+            <h2>5 | Good</h2>
+            <h4>This is a good, solid daily</h4>
+            <h2>6 | Very Good</h2>
+            <h4>A cut above.</h4>
+            <h2>7 | Great</h2>
+            <h4>Well above average</h4>
+            <h2>8 | Excellent</h2>
+            <h4>Really quite exceptional</h4>
+            <h2>9 | Incredible</h2>
+            <h4>An all time favorite</h4>
+            <h2>10 | Unsurpassable</h2>
+            <h4>No better exists</h4>
         </div>
     </div>
 </div>
-
-
 
 <% end %>
