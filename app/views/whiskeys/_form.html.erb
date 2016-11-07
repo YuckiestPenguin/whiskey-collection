@@ -57,6 +57,10 @@
                         </span>
                     </label>
                 </div>
+              <div class="field form-group">
+                <%= f.label "On Hand?" %>
+                <%= f.check_box :own %>
+              </div>
                 <div class="actions form-group">
                     <%= f.submit 'Add New Whiskey', class: " btn-block  btn-lg btn-success btn" %>
                 </div>
