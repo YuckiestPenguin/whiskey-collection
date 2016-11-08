@@ -8,8 +8,8 @@
   </div>
 <% end %>
 
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row-fluid">
     <div class="col-xs-12 text-center">
       <%= image_tag "collection.png" %>
       <h1>My Collection</h1>
@@ -21,7 +21,7 @@
   <div class="row-fluid">
     <% @whiskeys.each do |whiskey| %>
       <div class="col-sm-6 col-md-3">
-        <div class="thumbnail">
+        <div class="thumbnail no-border">
           <%= link_to (image_tag whiskey.image.url(:medium), class: "image"), whiskey  %>
         </div>
       </div>

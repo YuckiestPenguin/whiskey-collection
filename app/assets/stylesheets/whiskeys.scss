@@ -15,7 +15,19 @@
   background-size: cover;;
 
 }
+#show-page {
+  background-color: rgb(252, 228, 121)
+}
 
-#error_explanation {
-  display: none;
+.thumbnail {
+    border:0 !important;
+}
+
+.none-on-hand {
+  font-style: italic;
+  color: rgb(119, 9, 9)
+}
+
+.on-hand {
+  color: rgb(3, 140, 83)
 }

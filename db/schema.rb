@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107154543) do
+ActiveRecord::Schema.define(version: 20161107211808) do
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "ratingscore"
+    t.string   "word"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -46,7 +54,9 @@ ActiveRecord::Schema.define(version: 20161107154543) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.boolean  "own", default: false
+    t.boolean  "own"
+    t.integer  "rating_id"
+    t.index ["rating_id"], name: "index_whiskeys_on_rating_id"
   end
 
 end

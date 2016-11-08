@@ -1,20 +1,24 @@
-<div class="container">
+<section>
+  <div class="container">
   <div class="row">
       <div class="col-md-6 text-center">
           <%= image_tag @whiskey.image.url(:medium), class: "center-block" %>
-          <h2 class="text-center"><%= @whiskey.title %></h2>
-          <h4><strong>ABV: </strong><%= @whiskey.abv %></h4>
-          <h4><strong>Price: </strong><%= @whiskey.price %></h4>
+          <h1 class="text-center"><strong><%= @whiskey.title %></strong></h1>
+          <h4><strong>ABV: </strong><%= @whiskey.abv %>%</h4>
+          <h4><strong>Price: </strong>$ <%= @whiskey.price %></h4>
           <% if @whiskey.own == true %>
-          <%= image_tag "front-bottle.png" %>
-            <h4>Currently On Hand</h4>
+
+
+
+            <h3 class="on-hand">Currently On Hand</h3>
+            <%= image_tag "front-bottle.png" %>
             <% else %>
-            <h4>Currently Not On Hand</h4>
+            <h3 class="none-on-hand">Currently Not On Hand</h3>
           <% end %>
       </div>
       <div class="col-md-6 text-center">
           <h1 id="score" class="text-center"><%= @whiskey.score %></h1>
-          <h2>Color:</h2><%= image_tag "colorwheel.png" %>
+          <h2>Color:</h2>
           <h4><%= @whiskey.color %></h4>
 
           <h2>Nose:</h2>
@@ -38,3 +42,5 @@
     </div>
 
 </div>
+
+</section>
