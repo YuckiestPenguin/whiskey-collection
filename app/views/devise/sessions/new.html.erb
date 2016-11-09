@@ -28,16 +28,18 @@
 
       <%= render "devise/shared/links" %>
 </div> -->
-<div class="container-fluid">
+<body class="signin-cover">
+  <div class="container-fluid">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="wrapper">
-        <div class="login">
-            <p class="title text-center">LOGIN</p>
-            <%= f.email_field :email, autofocus: true, placeholder: "EMAIL" %>
-            <%= f.password_field :password, autocomplete: "off", placeholder: "PASSWORD" %>
-            <%= f.submit "Log in", class: "state" %>
-            <%= render "devise/shared/links" %>
-        </div>
+      <div class="login">
+        <p class="title text-center">Sign In</p>
+        <%= f.email_field :email, autofocus: true, placeholder: "EMAIL" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "PASSWORD" %>
+        <%= f.submit "Log in", class: "state" %>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
     <% end %>
-</div>
+  </div>
+</body>

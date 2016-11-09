@@ -6,8 +6,10 @@
     <h3>Remember that dram? Add your notes for future reference!</h3>
     <p><%= link_to "Start Building Your Collection!", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
   </div>
+
 <% end %>
 
+<% if user_signed_in? %>
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="col-xs-12 text-center">
@@ -29,3 +31,5 @@
     <% end %>
   </div>
 </div>
+
+<% end %>

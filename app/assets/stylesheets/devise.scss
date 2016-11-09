@@ -26,6 +26,25 @@
     color: black;
 }
 
+.update-state {
+  background-color: rgb(181, 255, 215);
+  color: black;
+}
+.update-state:hover {
+    background-color: rgb(118, 249, 178);
+    color: black;
+}
+
+.delete-state {
+  background-color: rgb(255, 208, 208);
+  color: black;
+}
+.delete-state:hover {
+    background-color: rgb(255, 133, 133);
+    color: black;
+}
+
+
 .login {
 
   border-radius: 2px 2px 5px 5px;
