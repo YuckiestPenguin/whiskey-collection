@@ -1,11 +1,22 @@
 <% if !user_signed_in? %>
-  <div class="jumbotron text-center">
+  <!-- <div class="jumbotron text-center">
     <h1>Your Whiskey Collection. All in One Place!</h1>
     <h3>Keep track of what you've tried.</h3>
     <h3>Bought a bottle? How much is left?!</h3>
     <h3>Remember that dram? Add your notes for future reference!</h3>
     <p><%= link_to "Start Building Your Collection!", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-  </div>
+  </div> -->
+
+  <body class="business-header">
+    <div class="container-fluid">
+        <div class="row-fluid text-center">
+            <div class="col-lg-12">
+                <h1 class="tagline">Your Whiskeys.</h1>
+                <h2 class="tagline">Always Home.</h2>
+            </div>
+        </div>
+    </div>
+</body>
 
 <% end %>
 

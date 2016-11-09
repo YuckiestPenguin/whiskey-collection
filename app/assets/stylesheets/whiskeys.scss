@@ -10,11 +10,7 @@
   padding-right: 5%;
 }
 
-.background-cover {
-  background-image: url("../images/whiskey-glass-cover.jpg");
-  background-size: cover;;
 
-}
 #show-page {
   background-color: rgb(252, 228, 121)
 }
@@ -49,4 +45,27 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+
+// test
+
+.business-header {
+    height: 500px;
+    width: 100%;
+    background: image-url('whiskey-couch.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
 }
