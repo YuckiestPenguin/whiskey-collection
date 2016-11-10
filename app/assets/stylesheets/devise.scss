@@ -191,3 +191,23 @@ footer {
     text-decoration: none;
   }
 }
+
+
+.signup-cover{
+  background-image: image-url('pouring-whiskey.jpg');
+  background-repeat: no-repeat;
+  background-size:75%;
+  background-position: right;
+}
+.signin-cover{
+  background-image: image-url('whiskey-orange.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+.account-cover{
+  background-image: image-url('whiskey-couch.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

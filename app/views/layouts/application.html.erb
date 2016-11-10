@@ -14,9 +14,10 @@ rel='stylesheet' type='text/css'>
         <%= render 'layouts/header' %>
         <div class="container-fluid">
           <% flash.each do |name, msg| %>
-          <%= content_tag(:div, msg, class: "alert alert-success") %>
+          <%= content_tag(:div, msg, class: "alert alert-info") %>
           <% end %>
-          <%= yield %>
+
         </div>
+        <%= yield %>
     </body>
 </html>

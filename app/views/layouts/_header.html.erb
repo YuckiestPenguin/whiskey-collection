@@ -24,7 +24,7 @@
       </ul>
       <%= form_tag search_whiskeys_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
       <p>
-        <%= text_field_tag :search, params[:search], class: "form-control" %>
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Ex: Four Roses, Macallan, Woodford" %>
         <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
         <% end %>
       </p>

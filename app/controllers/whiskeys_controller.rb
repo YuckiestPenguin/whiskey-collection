@@ -1,6 +1,6 @@
 class WhiskeysController < ApplicationController
   before_action :set_whiskey, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :search]
 
   def search
     if params[:search].present?
