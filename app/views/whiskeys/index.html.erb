@@ -1,5 +1,5 @@
 <% if !user_signed_in? %>
-  <!-- <div class="jumbotron text-center">
+<!-- <div class="jumbotron text-center">
     <h1>Your Whiskey Collection. All in One Place!</h1>
     <h3>Keep track of what you've tried.</h3>
     <h3>Bought a bottle? How much is left?!</h3>
@@ -7,63 +7,116 @@
     <p><%= link_to "Start Building Your Collection!", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
   </div> -->
 
-
-
-    <body class="landing-page-cover">
-      <div class="intro-header">
-          <div class="container">
-              <div class="row">
-                  <div class="col-xs-12">
-                      <div class="intro-message">
-                          <h1>Whiskey Digs</h1>
-                          <h3>Your Favorite Whiskeys, Always Home</h3>
-
-                          <hr class="intro-divider">
-                          <ul class="list-inline intro-social-buttons">
-                              <li>
-                                  <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                              </li>
-                              <li>
-                                  <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                              </li>
-                              <li>
-                                  <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-
-              </div>
-
+<body>
+  <div class="landing-page-cover">
+    <div class="intro-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="intro-message">
+              <h1>Whiskey Digs</h1>
+              <h2>Your Favorite Whiskeys, Always Home.</h2>
+              <hr class="intro-divider">
+              <ul class="list-inline intro-social-buttons">
+                <li>
+                  <a href="#" class="btn btn-default btn-lg">
+                    <span class="network-name">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="btn btn-default btn-lg">
+                    <span class="network-name">Twitter</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <!-- /.container -->
-
+        </div>
+      </div>
     </div>
-    </body>
+  </div>
+  <br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1 class="heading-title">Make the Collection, Yours.</h1>
+      <hr>
+      <h2>Don't you wish you could keep track of all of the whiskeys you've tried? Isn't hard to remember exaclty how that delicious drink tasted? How much was it? Oh Shoot!... Do you have any left at home? </h2>
+      <br>
+      <h2>That's where Whiskey Digs comes in! Let us help you keep track of your whiskey collection! Keep track of inventory, add your own personal reviews, rate your whiskeys with our unbelievably easy rating system, and make sure it's cocktail approved! </h2>
+    </div>
+  </div>
+</div>
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h1 class="heading-title">Some of Our Lovely Features</h1>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="col-xs-3 text-center">
+        <%= image_tag 'collection.png' %>
+        <h2>Inventory</h2>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= image_tag 'heart.png' %>
+        <h2>Favorites</h2>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= image_tag 'cocktail.png' %>
+        <h2>Cocktail Approved?</h2>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= image_tag 'medal.png' %>
+        <h2>Top Shelf Rating</h2>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= image_tag 'fork-knife.png' %>
+        <h2>Food Pairing</h2>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= image_tag 'ingredient.png' %>
+        <h2>Taste Notes Index</h2>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= image_tag 'map.png' %>
+        <h2>Bottle Locator</h2>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= image_tag 'chart.png' %>
+        <h2>Cost Analysis</h2>
+      </div>
+  </div>
+</body>
+
 
 <% end %>
 
 <% if user_signed_in? %>
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="col-xs-12 text-center">
-      <%= image_tag "collection.png" %>
-      <h1>My Collection</h1>
+    <div class="row-fluid">
+        <div class="col-xs-12 text-center">
+            <%= image_tag "collection.png" %>
+            <h1>My Collection</h1>
+        </div>
     </div>
-  </div>
 </div>
 <hr>
 <div class="container-fluid">
-  <div class="row-fluid">
-    <% @whiskeys.each do |whiskey| %>
-      <div class="col-sm-6 col-md-3">
-        <div class="thumbnail no-border">
-          <%= link_to (image_tag whiskey.image.url(:medium), class: "image"), whiskey  %>
+    <div class="row-fluid">
+        <% @whiskeys.each do |whiskey| %>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail no-border">
+                <%= link_to (image_tag whiskey.image.url(:medium), class: "image"), whiskey  %>
+            </div>
         </div>
-      </div>
 
-    <% end %>
-  </div>
+        <% end %>
+    </div>
 </div>
 
 <% end %>
